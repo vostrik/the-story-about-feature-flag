@@ -231,9 +231,7 @@
 <code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(...)</code>
 <code style="font-size: 60%;">&nbsp;</code>
 <code style="font-size: 60%;">const isTopActivityWidgetEnabled = await <mark>getFeatureFlag</mark>({</code>
-<code style="font-size: 60%;">    featureName: <mark>'TOP_ACTIVITY_WIDGET'</mark>,</code>
-<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
-<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
+<code style="font-size: 60%;">    featureName: <mark>'TOP_ACTIVITY_WIDGET'</mark></code>
 <code style="font-size: 60%;">})</code>
 <code style="font-size: 60%;">&nbsp;</code>
 <code style="font-size: 60%;">if (isTopActivityWidgetEnabled) {</code>
@@ -249,9 +247,7 @@
 <code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(...)</code>
 <code style="font-size: 60%;">&nbsp;</code>
 <code style="font-size: 60%;">const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
-<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
-<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
-<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
+<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET'</code>
 <code style="font-size: 60%;">})</code>
 <code style="font-size: 60%;">&nbsp;</code>
 <code style="font-size: 60%;">if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
@@ -336,13 +332,13 @@
 <code style="font-size: 60%;">&nbsp;</code>
 <code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(global.config.featureFlagConfigMapPath)</code>
 <code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const isWelcomeWizardEnabled = await <mark>getFeatureFlag</mark>({</code>
+<code style="font-size: 60%;">const isTopActivityWidgetEnabled = await <mark>getFeatureFlag</mark>({</code>
 <code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
 <code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
 <code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
 <code style="font-size: 60%;">})</code>
 <code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">if (<mark>isWelcomeWizardEnabled</mark>) {</code>
+<code style="font-size: 60%;">if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
 <code style="font-size: 60%;">    // Work in Progress code goes here</code>
 <code style="font-size: 60%;">}</code>
         </pre>
