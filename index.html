@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>История одного фиче-флага</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <style>
+        :root {
+            --red-color: #CC0000;
+        }
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+
+        .block--space-top {
+            padding: 50px 0 15px;
+        }
+
+        .font--red {
+            color: var(--red-color);
+        }
+
+        .font--xl {
+            font-size: 140%;
+        }
+
+        .font--l {
+            font-size: 90%;
+        }
+
+        .font--xxl {
+            font-size: 400%;
+        }
+    </style>
+</head>
+
+<body class="shower list">
+
+    <style>
+        .cover--right {
+            top: auto;
+            left: auto;
+            right: 0px;
+            bottom: 0px;
+            transform: none;
+        }
+
+        .cover--right {
+            top: auto;
+            left: auto;
+            right: 0px;
+            bottom: 0px;
+            transform: none;
+        }
+
+        .cover--right-demo {
+            top: auto;
+            left: auto;
+            right: 0px;
+            bottom: 0px;
+            transform: none;
+            max-width: 55%;
+        }
+
+        .cover--medium {
+            max-width: 60%;
+            max-height: 60%;
+        }
+
+        .cover--small {
+            max-width: 45%;
+            max-height: 45%;
+        }
+    </style>
+
+    <header class="caption">
+        <h1>История одного фиче-флага</h1>
+        <p>Павел Востриков, Kaspersky</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <figure>
+            <img style="width:100%" class="cover" src="pictures/cover.webp" alt="Feature Flags">
+        </figure>
+        <style>
+            #cover:after {
+                display: none;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Интро 👨‍👨‍👧‍👧</h2>
+        <p>Павел Востриков, JS buddy @ Kaspersky</p>
+        <ul>
+            <li>Kaspersky Web Toolset: <a href="https://github.com/kasperskylab/uif">github/UIF</a></li>
+            <li>Open Source contributor: <a href="https://www.npmjs.com/package/browserslist">Browserslist</a>, <a
+                    href="https://www.npmjs.com/package/autoprefixer">Autoprefixer</a>, <a
+                    href="https://www.npmjs.com/package/size-limit">Size Limit</a></li>
+            <li>Делаю <a href="https://github.com/vostrik/bibliography">Reading list for IT-hungry people</a></li>
+            <li>Один из организаторов <a href="https://moscowjs.org/">MoscowJS</a></li>
+        </ul>
+        <p></p>
+        <figure>
+            <img class="cover cover--right cover--medium" src="illustrations/intro.png" />
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>О чём доклад? 🤷</h2>
+        <div>
+            <h2 class="shout" style="font-size: 30px;">Использование фиче-флагов для упрощения разработки</h5>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Весь код на одном слайде</h2>
+        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(...)</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
+<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
+<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
+<code style="font-size: 60%;">})</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
+<code style="font-size: 60%;">    // Work in Progress code goes here</code>
+<code style="font-size: 60%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Agenda 📋</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-1.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Agenda 📋</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-2.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Agenda 📋</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-3.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Agenda 📋</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-4.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Agenda 📋</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-5.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Agenda 📋</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-6.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Что такое фиче-флаг? 🤔</h2>
+        <div>
+            <blockquote class="font--l block--space-top">
+                <span class="font--red">Фиче-флаги</span> — это настройки, которые позволяют не трогая программистов менять поведение программы, к примеру включать и выключать фичи.
+            </blockquote>
+            <p><a href="https://borshev.com/feature-flags/">Фёдор Борщёв</a></p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>High Level Architecture 🦅</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-1.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover cover" src="pictures/product-ui.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>High Level Architecture 🦅</h2>
+        <figure>
+            <img class="cover cover" src="pictures/hla-1.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Релиз, когда код не готов 🗿</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-2.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Релиз, когда код не готов 🗿</h2>
+        <div>
+            <p>Дано:</p>
+            <ul>
+                <li>Частые релизы по готовности фичи</li>
+                <li>Релиз не реже чем в X времени</li>
+                <li>Коротко живущие ветки 👈</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="slide">
+        <h2>Фиче-флаг для Work in Progress кода</h2>
+        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(...)</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const isTopActivityWidgetEnabled = await <mark>getFeatureFlag</mark>({</code>
+<code style="font-size: 60%;">    featureName: <mark>'TOP_ACTIVITY_WIDGET'</mark>,</code>
+<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
+<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
+<code style="font-size: 60%;">})</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">if (isTopActivityWidgetEnabled) {</code>
+<code style="font-size: 60%;">    // Work in Progress code goes here</code>
+<code style="font-size: 60%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Фиче-флаг для Work in Progress кода</h2>
+        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(...)</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
+<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
+<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
+<code style="font-size: 60%;">})</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
+<code style="font-size: 60%;">    // Work in Progress code goes here</code>
+<code style="font-size: 60%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Фиче-флаг для Work in Progress кода</h2>
+        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(<mark>...</mark>)</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
+<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
+<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
+<code style="font-size: 60%;">})</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">if (isTopActivityWidgetEnabled) {</code>
+<code style="font-size: 60%;">    // Work in Progress code goes here</code>
+<code style="font-size: 60%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Фиче-флаг для Work in Progress кода</h2>
+        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(<mark>global.config.featureFlagConfigMapPath</mark>)</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
+<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
+<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
+<code style="font-size: 60%;">})</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">if (isTopActivityWidgetEnabled) {</code>
+<code style="font-size: 60%;">    // Work in Progress code goes here</code>
+<code style="font-size: 60%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>ConfigMap ./feature-flags.json</h2>
+        <pre><code style="font-size: 80%;">{</code>
+<code style="font-size: 80%;">  "FEATURE_*_*_<mark>TOP_ACTIVITY_WIDGET</mark>": true</code>
+<code style="font-size: 80%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>ConfigMap ./feature-flags.json</h2>
+        <pre><code style="font-size: 80%;">{</code>
+<code style="font-size: 80%;">  "FEATURE_<mark>serverId</mark>__<mark>userId</mark>_TOP_ACTIVITY_WIDGET": true</code>
+<code style="font-size: 80%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Фиче-флаг для Work in Progress кода</h2>
+        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(global.config.featureFlagConfigMapPath)</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
+<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code style="font-size: 60%;">    serverId: <mark>'xxx-yyy'</mark>,</code>
+<code style="font-size: 60%;">    userId: <mark>'yyy-xxx'</mark></code>
+<code style="font-size: 60%;">})</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">if (isTopActivityWidgetEnabled) {</code>
+<code style="font-size: 60%;">    // Work in Progress code goes here</code>
+<code style="font-size: 60%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Фиче-флаг для Work in Progress кода</h2>
+        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(global.config.featureFlagConfigMapPath)</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const isWelcomeWizardEnabled = await <mark>getFeatureFlag</mark>({</code>
+<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
+<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
+<code style="font-size: 60%;">})</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">if (<mark>isWelcomeWizardEnabled</mark>) {</code>
+<code style="font-size: 60%;">    // Work in Progress code goes here</code>
+<code style="font-size: 60%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Фиче-флаг для 2 команд разработки 🤝</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-3.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Фиче-флаг для 2 команд разработки 🤝</h2>
+        <div>
+            <p>Дано:</p>
+            <ul>
+                <li>2 отдельные команды</li>
+                <li>1 кросс-продуктовый сценарий</li>
+                <li>Независимые релизы</li>
+                <li>Включение фичи по общей готовности 👈</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover cover" src="pictures/solution-structure.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>ConfigMap ./feature-flags.json</h2>
+        <pre><code style="font-size: 80%;">{</code>
+<code style="font-size: 80%;">  "FEATURE_*_*_TOP_ACTIVITY_WIDGET": true</code>
+<code style="font-size: 80%;">  "FEATURE_*_*_<mark>WELCOME_WIZARD_ENABLED</mark>": true</code>
+<code style="font-size: 80%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Инициализация фиче-флагов в HostApp</h2>
+        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const { getFeatureFlag } = <mark>featureRegistry.init</mark>(...)</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;"><mark>const isWelcomeWizardEnabled = await getFeatureFlag({</mark></code>
+<code style="font-size: 60%;">    featureName: 'WELCOME_WIZARD_ENABLED'</code>
+<code style="font-size: 60%;">})</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">if (isWelcomeWizardEnabled) {</code>
+<code style="font-size: 60%;">    // HostApp WIP code goes here</code>
+<code style="font-size: 60%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Использование в микросервисе или микрофронтенде</h2>
+        <pre><code style="font-size: 60%;">const { featureRegistry } = require('@holyjs/feature-registry')</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const { getFeatureFlag } = await <mark>featureRegistry.connectToRemote</mark>(...)</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const isWelcomeWizardEnabled = await <mark>getFeatureFlag</mark>({</code>
+<code style="font-size: 60%;">    featureName: 'WELCOME_WIZARD_ENABLED'</code>
+<code style="font-size: 60%;">})</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">if (isWelcomeWizardEnabled) {</code>
+<code style="font-size: 60%;">    // Micro frontend or service WIP code goes here</code>
+<code style="font-size: 60%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover cover" src="pictures/hla-1.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Переход из Self-hosted к Cloud Native ☁️</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-4.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Переход из Self-hosted к Cloud Native ☁️</h2>
+        <div>
+            <p>2 формата поставки: Cloud и Self-Hosted. <span class="font--red">Где встречается?</span></p>
+            <ul>
+                <li class="next">Confluence</li>
+                <li class="next">Gitlab</li>
+                <li class="next">Sentry</li>
+                <li class="next">
+                    Kaspersky Security Center 👈
+                    <figure>
+                        <img class="cover cover--right-demo" src="pictures/uif-app-demo.png">
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Файловая структура:</h2>
+        <pre><code style="font-size: 80%;">.
+└── src/
+    ├── index.js
+    └── feature/
+<mark >        ├── env-cloud/
+        │   └── feature.js</mark>
+        ├── env-local/
+        │   └── feature.js
+<mark>        └── feature.common.js</mark>
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>src/index.js</h2>
+        <pre><code style="font-size: 70%;">const path = require('path')</code>
+<code style="font-size: 70%;">&nbsp;</code>
+<code style="font-size: 70%;">const featureFilePath = path.resolve(</code>
+<code style="font-size: 70%;">    __dirname,</code>
+<code style="font-size: 70%;">    'feature',</code>
+<code style="font-size: 70%;"><mark>    globl.config.targetFolder,  // <---- environment implementation folder</mark></code>
+<code style="font-size: 70%;">    'feature.js'</code>
+<code style="font-size: 70%;">)</code>
+<code style="font-size: 70%;">&nbsp;</code>
+<code style="font-size: 70%;">const { FeatureLogic } = require(featureFilePath)</code>
+<code style="font-size: 70%;">FeatureLogic.init()</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>src/feature/env-cloud/feature.js</h2>
+        <pre><code style="font-size: 70%;">const { CommonFeatureLogic } = require('../feature.common.js')</code>
+<code style="font-size: 70%;">&nbsp;</code>
+<code style="font-size: 70%;"><mark>class FeatureLogic extends CommonFeatureLogic () {</mark></code>
+<code style="font-size: 70%;">    async init () {</code>
+<code style="font-size: 70%;">    return 'I am Cloud feature!'</code>
+<code style="font-size: 70%;">    }</code>
+<code style="font-size: 70%;">}</code>
+<code style="font-size: 70%;">&nbsp;</code>
+<code style="font-size: 70%;">module.exports = { FeatureLogic }</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Обновление технологий, редизайн 🏗️</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-5.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Обновление технологий, редизайн 🏗️</h2>
+        <div>
+            <p>Дано:</p>
+            <ul>
+                <li>20 команд</li>
+                <li>1 продукт</li>
+                <li>сменить поколение Дизайн-системы 👈</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Обновление технологий, редизайн 🏗️</h2>
+        <div>
+            <p>Чуть-чуть контекста:</p>
+            <ol>
+                <li>
+                    <span class="font--red">3 поколения UI Kit в проде</span><br/>
+                    <i>(так бывает, когда одновременно работают 20 продуктовых команд)</i>
+                </li>
+                <li>
+                    <span class="font--red">shared зависимости, приходящие из HostApp</span><br/>
+                    можно подменять реализацию при сохранении контрактов
+                </li>
+                <li>Server-Driven UI (DSL) для типовых сценариев</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Обновление технологий, редизайн 🏗️</h2>
+        <div>
+            <ol>
+                <li class="next">Глобальный фиче-флаг <span class="font--red">V6_UI_KIT_ENABLED</span></li>
+                <li class="next">Реверт п. 1 + Smoke tests + <span class="font--red">фиче-флаг под раздел</span></li>
+                <li class="next">Добавление фиче-флага <span class="font--red">под каждый микрофронт</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Несколько продуктов из единого кода 🗿</h2>
+        <figure>
+            <img class="cover cover" src="pictures/agenda-6.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Несколько продуктов из единого кода 🗿</h2>
+        <div>
+            <p>Дано:</p>
+            <ul>
+                <li>2 инфраструктуры: контейнеры и сервисы ОС</li>
+                <li>
+                    3 набора пользовательских сценариев
+                    <ol>
+                        <li>Cloud (Public Cloud)</li>
+                        <li>Self-hosted</li>
+                        <li>Private-cloud 👈</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover cover" src="pictures/very-simple.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Несколько продуктов из единого кода 🗿</h2>
+        <div>
+            <ol>
+                <li class="next"><span class="font--red">Пресеты фиче-флагов</span> для каждой из поставок</li>
+                <li class="next">
+                    <span class="font--red">Валидация env-переменных</span> builtime<br/>
+                    <a href="https://www.npmjs.com/package/envalid">npm: Envalid</a>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Стандартные библиотеки и подходы 📦</h2>
+        <div>
+            <ul>
+                <li class="next">if + env</li>
+                <li class="next">env <span class="font--red">--></span> ConfigMap: json / yaml</li>
+                <li class="next">ConfigMap <span class="font--red">--></span> Service: local cache + remote storage</li>
+                <li class="next">Распространение фиче-флага на группы:
+                    <ul>
+                        <li>сервера</li>
+                        <li>регионы</li>
+                        <li>пользователи</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Получение значений фиче-флагов 🔛</h2>
+        <div>
+            <ol>
+                <li class="next">
+                    Задача 1: удаленное управление фиче-флагами<br/>
+                    <span class="next">Решение: <span class="font--red">Сервис хранения фиче-флагов</span></span>
+                </li>
+                <li class="next">
+                    Задача 2: митигация скачков настроек (нет сети)<br/>
+                    <span class="next">Решение: <span class="font--red">Файл с дефолтами в гите и маппинг файла при деплойменте</span></span>
+                </li>
+                <li class="next">
+                    Задача 3: local-first (low / zero latency)<br/>
+                    <span class="next">Решение: <span class="font--red">Удаленный сервис работает в push режиме / фоновый pull</span></span>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover cover" src="pictures/solution-structure.png">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Взаимодействие с удаленным сервисом</h2>
+        <div>
+            <p>Распространены 2 паттерна взаимодействия акторов:</p>
+            <ul>
+                <li><span class="font--red">Хореография</span>: каждый ходит к каждому <i>(по-простому)</i></li>
+                <li><span class="font--red">Оркестрация</span>: контролирует один, отвечает всем.<br/>Но если упал, то упал <i>(по-простому)</i></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover cover" src="pictures/orchestration-vs-choreography.jpg">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Стандартные библиотеки и подходы 📦</h2>
+        <div>
+            <ul>
+                <li class="next">Firebase / Supabase / Базы данных</li>
+                <li class="next">Облачные провайдеры:
+                    <ul>
+                        <li>AWS AppConfig</li>
+                        <li>Microsoft Azure App Configuration</li>
+                        <li>Google Cloud Firestore</li>
+                    </ul>
+                </li>
+                <li class="next"><span class="font--red">@holyjs/feature-registry</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Как тестировать фиче-флаги? ✅</h2>
+        <div>
+            <ul>
+                <li class="next">Юнит-тесты</li>
+                <li class="next">E2E тесты</li>
+                <li class="next"><s>Спасибо кэп, мы пошли</s></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Юнит-тесты для фиче-флагов ✅</h2>
+        <div>
+            <p><span class="next">Комбинаторика</span><span class="next"> -> Таблица истинности</span></p>
+            <figure class="next">
+                <img style="margin-top: 50px; width: 82%" class="cover cover" src="pictures/combinatorics-1.png">
+            </figure>
+        </div>
+    </section>
+
+    <section class="slide" id="combinatorics-2">
+        <div>
+            <figure>
+                <img class="cover cover" src="pictures/combinatorics-2.png">
+            </figure>
+        </div>
+        <style>
+            #combinatorics-2:after {
+                display: none;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Юнит-тесты для фиче-флагов ✅</h2>
+        <div>
+            <ul>
+                <li>Комбинаторика -> Таблица истинности</li>
+                <li class="next">Таблица истинности?<br/><span class="next">Генерация тестов!</span> <span class="font--red next">не надо, чем проще — тем лучше</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>E2E тесты для фиче-флагов ✅</h2>
+        <div>
+            <ul>
+                <li>Задача: Разные значения фиче-флагов — <span class="font--red">разные сценарии</span></li>
+                <li class="next">Решение: Мок-сервер данных — <span class="font--red">/login?scenarioId=xxx-yyy</span></li>
+                <li class="next">
+                    Что может пойти не так?
+                    <ul>
+                        <li class="next">Функционал недозакрыт фиче-флагом — <span class="font--red">тестировать staging</span></li>
+                        <li class="next">Некорректные дефолты при деплойменте — <span class="font--red">тестировать prod</span></li>
+                        <li class="next">Баги в удаленном сервисе — <span class="font--red">тестировать сервис</span></li>
+                        <li class="next">Забыть удалить фиче-флаг — <span class="font--red">ревью и рефакторинг</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>О чём был доклад? 🤷</h2>
+        <div>
+            <h2 class="shout" style="font-size: 30px;">Использование фиче-флагов для упрощения разработки</h5>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Весь код на одном слайде</h2>
+        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(...)</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
+<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
+<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
+<code style="font-size: 60%;">})</code>
+<code style="font-size: 60%;">&nbsp;</code>
+<code style="font-size: 60%;">if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
+<code style="font-size: 60%;">    // Work in Progress code goes here</code>
+<code style="font-size: 60%;">}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Соберем все вместе 🐣__🦅</h2>
+        <div>
+            <ol style="font-size: 16px;">
+                <li class="next"><span class="font--red">Фиче-флаг для Work in Progress кода</span><br/>Позволяет выкатывать ранние Сanary релизы и заниматься отладкой неготовой фичи</li>
+                <li class="next"><span class="font--red">Фиче-флаг для распределенного деплоя</span><br/>Позволяет управлять функциональностью сквозь все части системы, в том числе при распределенном деплое</li>
+                <li class="next"><span class="font--red">Фиче-флаг для групп пользователей и серверов</span><br/>Дает возможность раннего тестирования функицонала</li>
+                <li class="next"><span class="font--red">Разбитие фиче-флага на маленькие зоны действия</span><br/> Для градуированного раскатывания нового функциональности в большом приложении</li>
+                <li class="next"><span class="font--red">Build time перегрузка подсистем</span><br/>(Не фиче-флаг, но тоже полезно)</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Ссылки</h2>
+        <div class="columns two">
+            <p>
+                Павел Востриков: <a href="mailto:mail@vostrik.com">mail@vostrik.com</a>
+                <a href="https://twitter.com/vos3k">twitter.com/vos3k</a><br />
+                <a href="https://github.com/vostrik">github.com/vostrik</a><br />
+                <a href="https://t.me/vos3k">t.me/vos3k</a>
+            </p>
+        </div>
+        <figure>
+            <img class="cover cover--right cover--small" src="illustrations/relax.png" />
+        </figure>
+    </section>
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Powered by Shower</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+
+</body>
+
+</html>
