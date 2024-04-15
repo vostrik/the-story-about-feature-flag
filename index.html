@@ -785,6 +785,12 @@
         </style>
     </section>
 
+    <section class="slide no-number">
+        <figure>
+            <img height="80%" class="cover cover" src="pictures/truth-tables.png">
+        </figure>
+    </section>
+
     <section class="slide">
         <h2>Юнит-тесты для фиче-флагов ✅</h2>
         <div>
@@ -793,6 +799,50 @@
                 <li class="next">Таблица истинности?<br/><span class="next">Генерация тестов!</span> <span class="font--red next">не надо, чем проще — тем лучше</span></li>
             </ul>
         </div>
+    </section>
+
+    <section class="slide no-number">
+        <h2>Юнит-тесты для фиче-флагов</h2>
+        <pre style="font-size: 80%;"><code>// logical input data for PerComponent + !DisableV6ForPlugins * PluginConfig</code>
+<code>// i.e. tests below is placed in sequence like 000, 001, 010, etc.</code>
+<code><mark>it('returns "false" if not enabled in PluginConfig'</mark>, () => {</code>
+<code>  expect(checkIsV6FeatureFlagsEnabled({ // 0 0 0</code> 
+<code>    perComponent: false,</code>
+<code>    disableV6ForPlugins: false</code>
+<code>    pluginConfig: false</code>
+<code>  })).toBe(true)</code>
+<code>})</code>
+<code>&nbsp;</code>
+<code><mark>it('"true" if enabled in PluginConfig and not disabled in console</mark>', () => {</code>
+<code>  expect(checkIsV6FeatureFlagsEnabled({ // 0 0 1</code> 
+<code>    perComponent: true,</code>
+<code>    disableV6ForPlugins: false,</code>
+<code>    pluginConfig: true</code>
+<code>  })).toBe(true)</code>
+<code>})</code>
+        </pre>
+    </section>
+
+    <section class="slide no-number">
+        <h2>Юнит-тесты для фиче-флагов</h2>
+        <pre style="font-size: 80%;"><code>// logical input data for PerComponent + !DisableV6ForPlugins * PluginConfig</code>
+<code>// i.e. <mark class="important">tests below is placed in sequence like 000, 001, 010</mark>, etc.</code>
+<code><mark>it('returns "false" if not enabled in PluginConfig'</mark>, () => {</code>
+<code>  expect(checkIsV6FeatureFlagsEnabled({ // 0 0 0</code> 
+<code>    perComponent: <mark class="important">false,</mark></code>
+<code>    disableV6ForPlugins: <mark class="important">false,</mark></code>
+<code>    pluginConfig: <mark class="important">false</mark></code>
+<code>  })).toBe(true)</code>
+<code>})</code>
+<code>&nbsp;</code>
+<code><mark>it('"true" if enabled in PluginConfig and not disabled in console</mark>', () => {</code>
+<code>  expect(checkIsV6FeatureFlagsEnabled({ // 0 0 1</code> 
+<code>    perComponent: <mark class="important">false,</mark></code>
+<code>    disableV6ForPlugins: <mark class="important">false,</mark></code>
+<code>    pluginConfig: <mark class="important">true</mark></code>
+<code>  })).toBe(true)</code>
+<code>})</code>
+        </pre>
     </section>
 
     <section class="slide">
