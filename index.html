@@ -491,7 +491,7 @@
 <code>const featureFilePath = path.resolve(</code>
 <code>    __dirname,</code>
 <code>    'feature',</code>
-<code><mark>    globl.config.targetFolder,  // <---- environment implementation folder</mark></code>
+<code><mark>    global.config.targetFolder,  // <---- environment implementation folder</mark></code>
 <code>    'feature.js'</code>
 <code>)</code>
 <code>&nbsp;</code>
@@ -506,7 +506,7 @@
 <code>&nbsp;</code>
 <code><mark>class FeatureLogic extends CommonFeatureLogic () {</mark></code>
 <code>    async init () {</code>
-<code>    return 'I am Cloud feature!'</code>
+<code>      return 'I am Cloud feature!'</code>
 <code>    }</code>
 <code>}</code>
 <code>&nbsp;</code>
@@ -730,8 +730,9 @@
     </section>
 
     <section class="slide">
+        <h2>Orchestration vs Choreography</h2>
         <figure>
-            <img class="cover cover" src="pictures/orchestration-vs-choreography.jpg">
+            <img height="40%" class="cover cover" src="pictures/orchestration-vs-choreography.png">
         </figure>
     </section>
 
