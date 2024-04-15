@@ -33,6 +33,10 @@
         .font--xxl {
             font-size: 400%;
         }
+
+        code {
+            font-size: 60%;
+        }
     </style>
 </head>
 
@@ -117,19 +121,19 @@
 
     <section class="slide">
         <h2>Весь код на одном слайде</h2>
-        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(...)</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
-<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
-<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
-<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
-<code style="font-size: 60%;">})</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
-<code style="font-size: 60%;">    // Work in Progress code goes here</code>
-<code style="font-size: 60%;">}</code>
+        <pre><code>import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code>&nbsp;</code>
+<code>const { getFeatureFlag } = featureRegistry.init(...)</code>
+<code>&nbsp;</code>
+<code>const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code>    serverId: 'xxx-yyy',</code>
+<code>    userId: 'yyy-xxx'</code>
+<code>})</code>
+<code>&nbsp;</code>
+<code>if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
+<code>    // Work in Progress code goes here</code>
+<code>}</code>
         </pre>
     </section>
 
@@ -226,121 +230,121 @@
     
     <section class="slide">
         <h2>Фиче-флаг для Work in Progress кода</h2>
-        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(...)</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const isTopActivityWidgetEnabled = await <mark>getFeatureFlag</mark>({</code>
-<code style="font-size: 60%;">    featureName: <mark>'TOP_ACTIVITY_WIDGET'</mark></code>
-<code style="font-size: 60%;">})</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">if (isTopActivityWidgetEnabled) {</code>
-<code style="font-size: 60%;">    // Work in Progress code goes here</code>
-<code style="font-size: 60%;">}</code>
+        <pre><code>import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code>&nbsp;</code>
+<code>const { getFeatureFlag } = featureRegistry.init(...)</code>
+<code>&nbsp;</code>
+<code>const isTopActivityWidgetEnabled = await <mark>getFeatureFlag</mark>({</code>
+<code>    featureName: <mark>'TOP_ACTIVITY_WIDGET'</mark></code>
+<code>})</code>
+<code>&nbsp;</code>
+<code>if (isTopActivityWidgetEnabled) {</code>
+<code>    // Work in Progress code goes here</code>
+<code>}</code>
         </pre>
     </section>
 
     <section class="slide">
         <h2>Фиче-флаг для Work in Progress кода</h2>
-        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(...)</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
-<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET'</code>
-<code style="font-size: 60%;">})</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
-<code style="font-size: 60%;">    // Work in Progress code goes here</code>
-<code style="font-size: 60%;">}</code>
+        <pre><code>import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code>&nbsp;</code>
+<code>const { getFeatureFlag } = featureRegistry.init(...)</code>
+<code>&nbsp;</code>
+<code>const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET'</code>
+<code>})</code>
+<code>&nbsp;</code>
+<code>if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
+<code>    // Work in Progress code goes here</code>
+<code>}</code>
         </pre>
     </section>
 
     <section class="slide">
         <h2>Фиче-флаг для Work in Progress кода</h2>
-        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(<mark>...</mark>)</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
-<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
-<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
-<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
-<code style="font-size: 60%;">})</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">if (isTopActivityWidgetEnabled) {</code>
-<code style="font-size: 60%;">    // Work in Progress code goes here</code>
-<code style="font-size: 60%;">}</code>
+        <pre><code>import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code>&nbsp;</code>
+<code>const { getFeatureFlag } = featureRegistry.init(<mark>...</mark>)</code>
+<code>&nbsp;</code>
+<code>const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code>    serverId: 'xxx-yyy',</code>
+<code>    userId: 'yyy-xxx'</code>
+<code>})</code>
+<code>&nbsp;</code>
+<code>if (isTopActivityWidgetEnabled) {</code>
+<code>    // Work in Progress code goes here</code>
+<code>}</code>
         </pre>
     </section>
 
     <section class="slide">
         <h2>Фиче-флаг для Work in Progress кода</h2>
-        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(<mark>global.config.featureFlagConfigMapPath</mark>)</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
-<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
-<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
-<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
-<code style="font-size: 60%;">})</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">if (isTopActivityWidgetEnabled) {</code>
-<code style="font-size: 60%;">    // Work in Progress code goes here</code>
-<code style="font-size: 60%;">}</code>
+        <pre><code>import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code>&nbsp;</code>
+<code>const { getFeatureFlag } = featureRegistry.init(<mark>global.config.featureFlagConfigMapPath</mark>)</code>
+<code>&nbsp;</code>
+<code>const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code>    serverId: 'xxx-yyy',</code>
+<code>    userId: 'yyy-xxx'</code>
+<code>})</code>
+<code>&nbsp;</code>
+<code>if (isTopActivityWidgetEnabled) {</code>
+<code>    // Work in Progress code goes here</code>
+<code>}</code>
         </pre>
     </section>
 
     <section class="slide">
         <h2>ConfigMap ./feature-flags.json</h2>
-        <pre><code style="font-size: 80%;">{</code>
-<code style="font-size: 80%;">  "FEATURE_*_*_<mark>TOP_ACTIVITY_WIDGET</mark>": true</code>
-<code style="font-size: 80%;">}</code>
+        <pre><code>{</code>
+<code>  "FEATURE_*_*_<mark>TOP_ACTIVITY_WIDGET</mark>": true</code>
+<code>}</code>
         </pre>
     </section>
 
     <section class="slide">
         <h2>ConfigMap ./feature-flags.json</h2>
-        <pre><code style="font-size: 80%;">{</code>
-<code style="font-size: 80%;">  "FEATURE_<mark>serverId</mark>__<mark>userId</mark>_TOP_ACTIVITY_WIDGET": true</code>
-<code style="font-size: 80%;">}</code>
+        <pre><code>{</code>
+<code>  "FEATURE_<mark>serverId</mark>__<mark>userId</mark>_TOP_ACTIVITY_WIDGET": true</code>
+<code>}</code>
         </pre>
     </section>
 
     <section class="slide">
         <h2>Фиче-флаг для Work in Progress кода</h2>
-        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(global.config.featureFlagConfigMapPath)</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
-<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
-<code style="font-size: 60%;">    serverId: <mark>'xxx-yyy'</mark>,</code>
-<code style="font-size: 60%;">    userId: <mark>'yyy-xxx'</mark></code>
-<code style="font-size: 60%;">})</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">if (isTopActivityWidgetEnabled) {</code>
-<code style="font-size: 60%;">    // Work in Progress code goes here</code>
-<code style="font-size: 60%;">}</code>
+        <pre><code>import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code>&nbsp;</code>
+<code>const { getFeatureFlag } = featureRegistry.init(global.config.featureFlagConfigMapPath)</code>
+<code>&nbsp;</code>
+<code>const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code>    serverId: <mark>'xxx-yyy'</mark>,</code>
+<code>    userId: <mark>'yyy-xxx'</mark></code>
+<code>})</code>
+<code>&nbsp;</code>
+<code>if (isTopActivityWidgetEnabled) {</code>
+<code>    // Work in Progress code goes here</code>
+<code>}</code>
         </pre>
     </section>
 
     <section class="slide">
         <h2>Фиче-флаг для Work in Progress кода</h2>
-        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(global.config.featureFlagConfigMapPath)</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const isTopActivityWidgetEnabled = await <mark>getFeatureFlag</mark>({</code>
-<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
-<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
-<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
-<code style="font-size: 60%;">})</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
-<code style="font-size: 60%;">    // Work in Progress code goes here</code>
-<code style="font-size: 60%;">}</code>
+        <pre><code>import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code>&nbsp;</code>
+<code>const { getFeatureFlag } = featureRegistry.init(global.config.featureFlagConfigMapPath)</code>
+<code>&nbsp;</code>
+<code>const isTopActivityWidgetEnabled = await <mark>getFeatureFlag</mark>({</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code>    serverId: 'xxx-yyy',</code>
+<code>    userId: 'yyy-xxx'</code>
+<code>})</code>
+<code>&nbsp;</code>
+<code>if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
+<code>    // Work in Progress code goes here</code>
+<code>}</code>
         </pre>
     </section>
 
@@ -372,42 +376,42 @@
 
     <section class="slide">
         <h2>ConfigMap ./feature-flags.json</h2>
-        <pre><code style="font-size: 80%;">{</code>
-<code style="font-size: 80%;">  "FEATURE_*_*_TOP_ACTIVITY_WIDGET": true</code>
-<code style="font-size: 80%;">  "FEATURE_*_*_<mark>WELCOME_WIZARD_ENABLED</mark>": true</code>
-<code style="font-size: 80%;">}</code>
+        <pre><code>{</code>
+<code>  "FEATURE_*_*_TOP_ACTIVITY_WIDGET": true</code>
+<code>  "FEATURE_*_*_<mark>WELCOME_WIZARD_ENABLED</mark>": true</code>
+<code>}</code>
         </pre>
     </section>
 
     <section class="slide">
         <h2>Инициализация фиче-флагов в HostApp</h2>
-        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const { getFeatureFlag } = <mark>featureRegistry.init</mark>(...)</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;"><mark>const isWelcomeWizardEnabled = await getFeatureFlag({</mark></code>
-<code style="font-size: 60%;">    featureName: 'WELCOME_WIZARD_ENABLED'</code>
-<code style="font-size: 60%;">})</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">if (isWelcomeWizardEnabled) {</code>
-<code style="font-size: 60%;">    // HostApp WIP code goes here</code>
-<code style="font-size: 60%;">}</code>
+        <pre><code>import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code>&nbsp;</code>
+<code>const { getFeatureFlag } = <mark>featureRegistry.init</mark>(...)</code>
+<code>&nbsp;</code>
+<code><mark>const isWelcomeWizardEnabled = await getFeatureFlag({</mark></code>
+<code>    featureName: 'WELCOME_WIZARD_ENABLED'</code>
+<code>})</code>
+<code>&nbsp;</code>
+<code>if (isWelcomeWizardEnabled) {</code>
+<code>    // HostApp WIP code goes here</code>
+<code>}</code>
         </pre>
     </section>
 
     <section class="slide">
         <h2>Использование в микросервисе или микрофронтенде</h2>
-        <pre><code style="font-size: 60%;">const { featureRegistry } = require('@holyjs/feature-registry')</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const { getFeatureFlag } = await <mark>featureRegistry.connectToRemote</mark>(...)</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const isWelcomeWizardEnabled = await <mark>getFeatureFlag</mark>({</code>
-<code style="font-size: 60%;">    featureName: 'WELCOME_WIZARD_ENABLED'</code>
-<code style="font-size: 60%;">})</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">if (isWelcomeWizardEnabled) {</code>
-<code style="font-size: 60%;">    // Micro frontend or service WIP code goes here</code>
-<code style="font-size: 60%;">}</code>
+        <pre><code>const { featureRegistry } = require('@holyjs/feature-registry')</code>
+<code>&nbsp;</code>
+<code>const { getFeatureFlag } = await <mark>featureRegistry.connectToRemote</mark>(...)</code>
+<code>&nbsp;</code>
+<code>const isWelcomeWizardEnabled = await <mark>getFeatureFlag</mark>({</code>
+<code>    featureName: 'WELCOME_WIZARD_ENABLED'</code>
+<code>})</code>
+<code>&nbsp;</code>
+<code>if (isWelcomeWizardEnabled) {</code>
+<code>    // Micro frontend or service WIP code goes here</code>
+<code>}</code>
         </pre>
     </section>
 
@@ -444,7 +448,7 @@
 
     <section class="slide">
         <h2>Файловая структура:</h2>
-        <pre><code style="font-size: 80%;">.
+        <pre><code>.
 └── src/
     ├── index.js
     └── feature/
@@ -458,31 +462,31 @@
 
     <section class="slide">
         <h2>src/index.js</h2>
-        <pre><code style="font-size: 70%;">const path = require('path')</code>
-<code style="font-size: 70%;">&nbsp;</code>
-<code style="font-size: 70%;">const featureFilePath = path.resolve(</code>
-<code style="font-size: 70%;">    __dirname,</code>
-<code style="font-size: 70%;">    'feature',</code>
-<code style="font-size: 70%;"><mark>    globl.config.targetFolder,  // <---- environment implementation folder</mark></code>
-<code style="font-size: 70%;">    'feature.js'</code>
-<code style="font-size: 70%;">)</code>
-<code style="font-size: 70%;">&nbsp;</code>
-<code style="font-size: 70%;">const { FeatureLogic } = require(featureFilePath)</code>
-<code style="font-size: 70%;">FeatureLogic.init()</code>
+        <pre><code>const path = require('path')</code>
+<code>&nbsp;</code>
+<code>const featureFilePath = path.resolve(</code>
+<code>    __dirname,</code>
+<code>    'feature',</code>
+<code><mark>    globl.config.targetFolder,  // <---- environment implementation folder</mark></code>
+<code>    'feature.js'</code>
+<code>)</code>
+<code>&nbsp;</code>
+<code>const { FeatureLogic } = require(featureFilePath)</code>
+<code>FeatureLogic.init()</code>
         </pre>
     </section>
 
     <section class="slide">
         <h2>src/feature/env-cloud/feature.js</h2>
-        <pre><code style="font-size: 70%;">const { CommonFeatureLogic } = require('../feature.common.js')</code>
-<code style="font-size: 70%;">&nbsp;</code>
-<code style="font-size: 70%;"><mark>class FeatureLogic extends CommonFeatureLogic () {</mark></code>
-<code style="font-size: 70%;">    async init () {</code>
-<code style="font-size: 70%;">    return 'I am Cloud feature!'</code>
-<code style="font-size: 70%;">    }</code>
-<code style="font-size: 70%;">}</code>
-<code style="font-size: 70%;">&nbsp;</code>
-<code style="font-size: 70%;">module.exports = { FeatureLogic }</code>
+        <pre><code>const { CommonFeatureLogic } = require('../feature.common.js')</code>
+<code>&nbsp;</code>
+<code><mark>class FeatureLogic extends CommonFeatureLogic () {</mark></code>
+<code>    async init () {</code>
+<code>    return 'I am Cloud feature!'</code>
+<code>    }</code>
+<code>}</code>
+<code>&nbsp;</code>
+<code>module.exports = { FeatureLogic }</code>
         </pre>
     </section>
 
@@ -571,7 +575,7 @@
             <ol>
                 <li class="next"><span class="font--red">Пресеты фиче-флагов</span> для каждой из поставок</li>
                 <li class="next">
-                    <span class="font--red">Валидация env-переменных</span> builtime<br/>
+                    <span class="font--red">Валидация env-переменных</span> buildtime<br/>
                     <a href="https://www.npmjs.com/package/envalid">npm: Envalid</a>
                 </li>
             </ol>
@@ -728,19 +732,19 @@
 
     <section class="slide">
         <h2>Весь код на одном слайде</h2>
-        <pre><code style="font-size: 70%;">import { featureRegistry } from '@holyjs/feature-registry'</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const { getFeatureFlag } = featureRegistry.init(...)</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
-<code style="font-size: 60%;">    featureName: 'TOP_ACTIVITY_WIDGET',</code>
-<code style="font-size: 60%;">    serverId: 'xxx-yyy',</code>
-<code style="font-size: 60%;">    userId: 'yyy-xxx'</code>
-<code style="font-size: 60%;">})</code>
-<code style="font-size: 60%;">&nbsp;</code>
-<code style="font-size: 60%;">if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
-<code style="font-size: 60%;">    // Work in Progress code goes here</code>
-<code style="font-size: 60%;">}</code>
+        <pre><code>import { featureRegistry } from '@holyjs/feature-registry'</code>
+<code>&nbsp;</code>
+<code>const { getFeatureFlag } = featureRegistry.init(...)</code>
+<code>&nbsp;</code>
+<code>const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code>    serverId: 'xxx-yyy',</code>
+<code>    userId: 'yyy-xxx'</code>
+<code>})</code>
+<code>&nbsp;</code>
+<code>if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
+<code>    // Work in Progress code goes here</code>
+<code>}</code>
         </pre>
     </section>
 
