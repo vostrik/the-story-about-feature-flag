@@ -130,7 +130,7 @@
 <code>const { getFeatureFlag } = featureRegistry.init(...)</code>
 <code>&nbsp;</code>
 <code>const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
-<code>    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET_ENABLED',</code>
 <code>    serverId: 'xxx-yyy',</code>
 <code>    userId: 'yyy-xxx'</code>
 <code>})</code>
@@ -245,7 +245,7 @@
 <code>const { getFeatureFlag } = featureRegistry.init(...)</code>
 <code>&nbsp;</code>
 <code>const isTopActivityWidgetEnabled = await <mark>getFeatureFlag</mark>({</code>
-<code>    featureName: <mark>'TOP_ACTIVITY_WIDGET'</mark></code>
+<code>    featureName: <mark>'TOP_ACTIVITY_WIDGET_ENABLED'</mark></code>
 <code>})</code>
 <code>&nbsp;</code>
 <code>if (isTopActivityWidgetEnabled) {</code>
@@ -261,7 +261,7 @@
 <code>const { getFeatureFlag } = featureRegistry.init(...)</code>
 <code>&nbsp;</code>
 <code>const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
-<code>    featureName: 'TOP_ACTIVITY_WIDGET'</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET_ENABLED'</code>
 <code>})</code>
 <code>&nbsp;</code>
 <code>if (<mark>isTopActivityWidgetEnabled</mark>) {</code>
@@ -277,7 +277,7 @@
 <code>const { getFeatureFlag } = featureRegistry.init(<mark>...</mark>)</code>
 <code>&nbsp;</code>
 <code>const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
-<code>    featureName: 'TOP_ACTIVITY_WIDGET'</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET_ENABLED'</code>
 <code>})</code>
 <code>&nbsp;</code>
 <code>if (isTopActivityWidgetEnabled) {</code>
@@ -293,7 +293,7 @@
 <code>const { getFeatureFlag } = featureRegistry.init(<mark>global.config.featureFlagConfigMapPath</mark>)</code>
 <code>&nbsp;</code>
 <code>const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
-<code>    featureName: 'TOP_ACTIVITY_WIDGET'</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET_ENABLED'</code>
 <code>})</code>
 <code>&nbsp;</code>
 <code>if (isTopActivityWidgetEnabled) {</code>
@@ -305,7 +305,7 @@
     <section class="slide">
         <h2>ConfigMap ./feature-flags.json</h2>
         <pre><code>{</code>
-<code>  "FEATURE_*_*_<mark>TOP_ACTIVITY_WIDGET</mark>": true</code>
+<code>  "FEATURE_*_*_<mark>TOP_ACTIVITY_WIDGET_ENABLED</mark>": true</code>
 <code>}</code>
         </pre>
     </section>
@@ -313,7 +313,7 @@
     <section class="slide">
         <h2>ConfigMap ./feature-flags.json</h2>
         <pre><code>{</code>
-<code>  "FEATURE_<mark>serverId</mark>__<mark>userId</mark>_TOP_ACTIVITY_WIDGET": true</code>
+<code>  "FEATURE_<mark>serverId</mark>__<mark>userId</mark>_TOP_ACTIVITY_WIDGET_ENABLED": true</code>
 <code>}</code>
         </pre>
     </section>
@@ -325,7 +325,7 @@
 <code>const { getFeatureFlag } = featureRegistry.init(global.config.featureFlagConfigMapPath)</code>
 <code>&nbsp;</code>
 <code>const isTopActivityWidgetEnabled = await getFeatureFlag({</code>
-<code>    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET_ENABLED',</code>
 <code>    serverId: <mark>'xxx-yyy'</mark>,</code>
 <code>    userId: <mark>'yyy-xxx'</mark></code>
 <code>})</code>
@@ -343,7 +343,7 @@
 <code>const { getFeatureFlag } = featureRegistry.init(global.config.featureFlagConfigMapPath)</code>
 <code>&nbsp;</code>
 <code>const isTopActivityWidgetEnabled = await <mark>getFeatureFlag</mark>({</code>
-<code>    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET_ENABLED',</code>
 <code>    serverId: 'xxx-yyy',</code>
 <code>    userId: 'yyy-xxx'</code>
 <code>})</code>
@@ -395,7 +395,7 @@
     <section class="slide">
         <h2>ConfigMap ./feature-flags.json</h2>
         <pre><code>{</code>
-<code>  "FEATURE_*_*_TOP_ACTIVITY_WIDGET": true</code>
+<code>  "FEATURE_*_*_TOP_ACTIVITY_WIDGET_ENABLED": true</code>
 <code>  "FEATURE_*_*_<mark>WELCOME_WIZARD_ENABLED</mark>": true</code>
 <code>}</code>
         </pre>
@@ -606,6 +606,68 @@
         </div>
     </section>
 
+    <section class="slide no-number">
+        <h2>Пресеты фиче-флагов</h2>
+        <pre><code>{</code>
+<code>  "<mark>ENV_SELF_HOSTED</mark>": {</code>
+<code>    "FEATURE_*_*_TOP_ACTIVITY_WIDGET_ENABLED": true,</code>
+<code>    "FEATURE_*_*_WELCOME_WIZARD_ENABLED": false</code>
+<code>  },</code>
+<code>  "<mark>ENV_PUBLIC_CLOUD</mark>": {</code>
+<code>    "FEATURE_*_*_TOP_ACTIVITY_WIDGET_ENABLED": false,</code>
+<code>    "FEATURE_*_*_WELCOME_WIZARD_ENABLED": true</code>
+<code>  }</code>
+<code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide no-number">
+        <h2>Пресеты фиче-флагов</h2>
+        <pre><code>{</code>
+<code>  "<mark>ENV_SELF_HOSTED</mark>": {</code>
+<code>    "FEATURE_*_*_<mark class="important">TOP_ACTIVITY_WIDGET_ENABLED</mark>": true,</code>
+<code>    "FEATURE_*_*_WELCOME_WIZARD_ENABLED": false</code>
+<code>  },</code>
+<code>  "<mark>ENV_PUBLIC_CLOUD</mark>": {</code>
+<code>    "FEATURE_*_*_<mark class="important">TOP_ACTIVITY_WIDGET_ENABLED</mark>": false,</code>
+<code>    "FEATURE_*_*_WELCOME_WIZARD_ENABLED": true</code>
+<code>  }</code>
+<code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide no-number">
+        <h2>Валидация env-переменных</h2>
+        <pre><code>require('dotenv').config()</code>
+<code>const { <mark>cleanEnv</mark>, host, port, str } = require('envalid')</code>
+<code>&nbsp;</code>
+<code>export const env = <mark>cleanEnv</mark>(process.env, {</code>
+<code>  NODE_ENV: str({</code>
+<code>    choices: ['development', 'test', 'production', 'staging'],</code>
+<code>    default: 'development'</code>
+<code>  }),</code>
+<code>  WEB_SERVER_HOST: host({ default: '0.0.0.0' }),</code>
+<code>  WEB_SERVER_PORT: port({ default: 3000 }),</code>
+<code>})</code>
+        </pre>
+    </section>
+
+    <section class="slide no-number">
+        <h2>Валидация env-переменных</h2>
+        <pre><code>require('dotenv').config()</code>
+<code>const { <mark>cleanEnv</mark>, host, port, <mark class="important">str</mark> } = require('envalid')</code>
+<code>&nbsp;</code>
+<code>export const env = <mark>cleanEnv</mark>(process.env, {</code>
+<code>  NODE_ENV: <mark class="important">str({</mark></code>
+<code>    choices: ['development', 'test', 'production', 'staging'],</code>
+<code>    default: 'development'</code>
+<code>  <mark class="important">}),</mark></code>
+<code>  WEB_SERVER_HOST: host({ default: '0.0.0.0' }),</code>
+<code>  WEB_SERVER_PORT: port({ default: 3000 }),</code>
+<code>})</code>
+        </pre>
+    </section>
+
     <section class="slide">
         <h2>Стандартные библиотеки и подходы 📦</h2>
         <div>
@@ -766,7 +828,7 @@
 <code>const { getFeatureFlag } = featureRegistry.init(...)</code>
 <code>&nbsp;</code>
 <code>const <mark>isTopActivityWidgetEnabled</mark> = await getFeatureFlag({</code>
-<code>    featureName: 'TOP_ACTIVITY_WIDGET',</code>
+<code>    featureName: 'TOP_ACTIVITY_WIDGET_ENABLED',</code>
 <code>    serverId: 'xxx-yyy',</code>
 <code>    userId: 'yyy-xxx'</code>
 <code>})</code>
